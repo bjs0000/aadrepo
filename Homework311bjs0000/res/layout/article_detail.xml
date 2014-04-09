@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:text="@string/article_title" >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="?android:listSeparatorTextViewStyle"
+         />
+    <ImageButton 
+        android:id="@+id/fc_image"
+        android:layout_width="32dp"
+        android:layout_height="48dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"        
+        android:src="@drawable/ic_launcher"    
+     />
+    <TextView android:id="@+id/article_detail_title"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:textSize="16sp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:maxLines="2"
+        android:scrollbars="vertical"
+        style="?android:listSeparatorTextViewStyle"        
+    	/>
+
+    <TextView
+        android:id="@+id/article_detail_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        />
+	    
+      <TextView
+          android:id="@+id/article_detail_content"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:maxLines="30"
+          android:scrollbars="vertical"
+          android:textSize="16sp"
+          android:layout_marginLeft="8dp"
+          android:layout_marginRight="8dp"
+          android:ems="10"
+          />
+ 	
+</LinearLayout>
