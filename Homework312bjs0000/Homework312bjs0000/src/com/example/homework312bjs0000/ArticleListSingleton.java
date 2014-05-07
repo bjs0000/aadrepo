@@ -7,7 +7,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
-
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.util.Log;
 
@@ -90,6 +90,7 @@ public class ArticleListSingleton {
 	}
 	
 	
+	@SuppressLint("SimpleDateFormat")
 	public class MyComparator implements Comparator<ArticleItem> {
 	    @Override
 	    public int compare(ArticleItem AI1, ArticleItem AI2) {
@@ -97,23 +98,10 @@ public class ArticleListSingleton {
 	    }
 	    
 	    private int compareDates(String date2, String date1) {
-	    	String temp1 = date1;
-	    	String temp2 = date2;
-	    	boolean bothGMT = date2.contains("GMT") && 
-	    			date1.contains("GMT");
-	    	boolean noneGMT = date2.contains("GMT") == false &&
-	    			date1.contains("GMT") == false;
-
-	    	
-	    	if (!bothGMT || noneGMT) {
-	    		temp2 = convertFormat(date2);
-	    		temp1 = convertFormat(date1);
-	    	}
-
-	    	return temp2.compareTo(temp1);
+	    	return convertFormat(date2).compareTo(convertFormat(date1));
 	    }
 	    
-	    private String convertFormat(String date) {
+	    private Date convertFormat(String date) {
 	    	String[] parts = date.split(" ");
 
 	        String tzid =  date.contains("GMT")?"GMT":"EST";
@@ -130,7 +118,7 @@ public class ArticleListSingleton {
 				Log.d("FP", "THREW");
 				e.printStackTrace();
 			}
-	        return result.toString();
+	        return result;
 
 	    }
 	}
