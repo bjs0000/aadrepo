@@ -50,7 +50,7 @@ public class ArticleListSingleton {
 	}
 	
 	public void addArticle(ArticleItem item) {
-		Log.d("FP", "New Article " + item.getTitle());
+//		Log.d("FP", "New Article " + item.getTitle());
 		itemList.add(item);
 		
 	}

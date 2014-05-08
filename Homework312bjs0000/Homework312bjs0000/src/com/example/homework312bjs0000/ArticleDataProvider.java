@@ -62,6 +62,7 @@ public class ArticleDataProvider {
         return new String(getUrlBytes(urlSpec));
     }
 	public void fetchItems(String endpoint) {
+		Log.d("FP", "fetchItems");
 	        try {
 	    		String url = Uri.parse(endpoint).buildUpon().build().toString(); 
 	            

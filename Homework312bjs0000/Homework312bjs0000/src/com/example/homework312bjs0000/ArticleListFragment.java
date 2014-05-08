@@ -64,8 +64,9 @@ public class ArticleListFragment extends ListFragment {
         @Override
         protected  Void doInBackground(Void... params) {
         	singleton.purgeDB();
-        	new ArticleDataProvider(singleton).fetchItems(GOOGLE_ENDPOINT);
-        	new ArticleDataProvider(singleton).fetchItems(YAHOO_ENDPOINT);
+        	ArticleDataProvider provider = new ArticleDataProvider(singleton);
+        	provider.fetchItems(GOOGLE_ENDPOINT);
+        	provider.fetchItems(YAHOO_ENDPOINT);
         	singleton.sortList();
 			return null;
         }
