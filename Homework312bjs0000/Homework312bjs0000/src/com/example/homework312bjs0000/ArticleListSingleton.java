@@ -56,14 +56,8 @@ public class ArticleListSingleton {
 	}
 	
 	public void purgeDB() {
-		int idx = 0;
-		while (idx < itemList.size())
-		{
-			// Remove item
-		    itemList.remove(idx);
-		    ++idx;
+		itemList.clear();
 
-		}
 	}
 	public void deleteArticle(String title) {
 
