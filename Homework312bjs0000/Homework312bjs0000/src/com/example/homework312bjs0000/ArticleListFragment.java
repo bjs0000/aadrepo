@@ -21,8 +21,12 @@ import android.widget.Toast;
 
 public class ArticleListFragment extends ListFragment {
 	private ArrayList<ArticleItem> items = null;
-    private final String GOOGLE_ENDPOINT = "https://news.google.com/news/section?topic=w&output=rss";
-    private final String YAHOO_ENDPOINT = "http://news.yahoo.com/rss/world/";    
+    private final String GOOGLE_ENDPOINT                    = "https://news.google.com/news/section?topic=w&output=rss";
+    private final String YAHOO_ENDPOINT                     = "http://news.yahoo.com/rss/world/";
+    private final String SEAHAWKS_ENDPOINT                  = " http://sports.yahoo.com/nfl/teams/sea/rss.xml";
+    private final String SEATTLE_TIMES_SEAHAWKS_ENDPOINT    = "http://seattletimes.com/rss/seahawks.xml";
+    private final String SEATTLE_TIMES_MOST_RECENT_ENDPOINT = "http://seattletimes.com/rss/home.xml";
+    private final String SEATTLE_ENTERTAINMENT_ENDPOINT = "http://seattletimes.com/rss/entertainment.xml";
     ArticleListSingleton singleton = null;
 	ShakeDetectActivity shakeDetect;
 
@@ -63,10 +67,15 @@ public class ArticleListFragment extends ListFragment {
     private class ArticleFetcher extends AsyncTask<Void,Void,Void>{
         @Override
         protected  Void doInBackground(Void... params) {
-        	singleton.purgeDB();
+
         	ArticleDataProvider provider = new ArticleDataProvider(singleton);
+        	singleton.purgeDB();
         	provider.fetchItems(GOOGLE_ENDPOINT);
         	provider.fetchItems(YAHOO_ENDPOINT);
+        	provider.fetchItems(SEAHAWKS_ENDPOINT);
+        	provider.fetchItems(SEATTLE_TIMES_SEAHAWKS_ENDPOINT);
+        	provider.fetchItems(SEATTLE_TIMES_MOST_RECENT_ENDPOINT); 
+        	provider.fetchItems(SEATTLE_ENTERTAINMENT_ENDPOINT);
         	singleton.sortList();
 			return null;
         }
