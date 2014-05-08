@@ -97,8 +97,9 @@ public class ArticleListSingleton {
 	    
 	    private Date convertFormat(String date) {
 	    	String[] parts = date.split(" ");
+	    	// The yahoo times appear to be in EST so adjust accordingly
+	        String tzid =  date.contains("GMT")?"GMT":date.contains("PDT")?"PDT":"EST";
 
-	        String tzid =  date.contains("GMT")?"GMT":"EST";
 	        String temp = "";
 	        Date result = null;
 	        if (parts.length >= 4)
