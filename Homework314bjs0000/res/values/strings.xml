@@ -1,0 +1,11 @@
+<resources>
+
+    <string name="app_name">Homework314</string>
+    <string name="new_location">New Location</string>
+    <string name="location">Location</string>
+    <string name="ok">Ok</string>
+    <string name="cancel">Cancel</string>
+    <string name="location_hint">Enter City or Zip</string>  
+    <string name="location_title">Location</string>
+    <string name="give_credit">Powered by www.worldweatheronline.com</string>
+</resources>
