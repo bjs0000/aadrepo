@@ -56,7 +56,7 @@
            android:layout_height="wrap_content"          
            android:textSize="16sp"
            android:gravity="right"
-           android:textColor="#FFFFFFFF"           
+       	   android:textColor="#80800000"         
            android:layout_marginRight="2dp" ></TextView>
      	 <TextView
            android:id="@+id/image_text"
@@ -64,7 +64,7 @@
            android:layout_height="wrap_content"          
            android:textSize="18sp"
            android:gravity="right"
-           android:textColor="#FFFFFFFF"           
+           android:textColor="#80800000"            
            android:layout_marginRight="2dp" ></TextView>
        </LinearLayout>
        <TextView
@@ -74,7 +74,7 @@
          android:textSize="32sp"
          android:gravity="left"
          android:layout_marginRight="2dp"
-         android:textColor="#FFFFFFFF"
+         android:textColor="#80800000" 
          android:layout_weight="1" ></TextView>
       </LinearLayout>
      <LinearLayout
